@@ -5,11 +5,10 @@
 // v1.03 :: Sym - 2017-05-27 - Fixed reset on every zone
 
 
-#include "../MQ2Plugin.h"
-PLUGIN_VERSION(1.03);
-
+#include <mq/Plugin.h>
 
 PreSetup("MQ2KillTracker");
+PLUGIN_VERSION(1.03);
 
 #define SKIP_PULSES 25
 #define SECOND 1000
@@ -32,7 +31,7 @@ DWORD reportLastSent = GetTickCount();
 
 
 void Update_INIFileName() {
-    sprintf_s(INIFileName,"%s\\%s_%s.ini",gszINIPath, EQADDR_SERVERNAME, GetCharInfo()->Name);
+    sprintf_s(INIFileName,"%s\\%s_%s.ini", gPathConfig, EQADDR_SERVERNAME, GetCharInfo()->Name);
 }
 
 VOID LoadINI (VOID) {
