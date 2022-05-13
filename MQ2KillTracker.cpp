@@ -31,7 +31,7 @@ DWORD reportLastSent = GetTickCount();
 
 
 void Update_INIFileName() {
-    sprintf_s(INIFileName,"%s\\%s_%s.ini", gPathConfig, EQADDR_SERVERNAME, GetCharInfo()->Name);
+    sprintf_s(INIFileName,"%s\\%s_%s.ini", gPathConfig, GetServerShortName(), pLocalPC->Name);
 }
 
 VOID LoadINI (VOID) {
